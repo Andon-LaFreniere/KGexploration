@@ -45,10 +45,14 @@ for i in family_members:
     graph.add((pfs["ex"][i], a, pfs["ex"]["Person"]))
 
 graph.add((pfs["ex"]["Andon"], pfs["ex"]["HasSibling"], pfs["ex"]["Gracie"]))
+
 graph.add((pfs["ex"]["Andon"], pfs["ex"]["HasParent"], pfs["ex"]["Brian"]))
 graph.add((pfs["ex"]["Andon"], pfs["ex"]["HasParent"], pfs["ex"]["Andrea"]))
 graph.add((pfs["ex"]["Brian"], pfs["ex"]["HasParent"], pfs["ex"]["Debbie"]))
 graph.add((pfs["ex"]["Andrea"], pfs["ex"]["HasParent"], pfs["ex"]["Janice"]))
+
+graph.add((pfs["ex"]["Andon"], pfs["ex"]["HasGrandParent"], pfs["ex"]["Janice"]))
+graph.add((pfs["ex"]["Andon"], pfs["ex"]["HasGrandParent"], pfs["ex"]["Debbie"]))
 
 output_file = "output.ttl"
 temp = graph.serialize(format="turtle", encoding="utf-8", destination=output_file)
